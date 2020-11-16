@@ -6,11 +6,13 @@ from heap_s import heap_sort
 from shell_s import shell_sort
 from insertion_s import insertion_sort
 from selection_s import selection_sort
+from merge_s import merge_sort
+from quick_s import quick_sort
 
 n_elements = int(input('Enter number of elements: '))
 alg_choice = int(input('Choose algorithm: \n 1. Bubble Sort '
             '\n 2. Heapify Sort \n 3. Shell Sort \n 4. Insertion Sort'
-            '\n 5. Selection Sort \n'))
+            '\n 5. Selection Sort \n 6. Merge Sort \n 7. Quick Sort \n'))
 
 array = [i + 1 for i in range(n_elements)]
 random.shuffle(array)
@@ -30,7 +32,12 @@ elif(alg_choice == 4):
 elif(alg_choice == 5):
     title = 'Selection Sort'
     algo = selection_sort(array)
-
+elif(alg_choice == 6):
+    title = 'Merge Sort'
+    algo = merge_sort(array, 0, n_elements-1)
+elif(alg_choice == 7):
+    title = 'Merge Sort'
+    algo = quick_sort(array, 0, n_elements-1)
 
 fig, ax = plt.subplots()
 ax.set_title(title)
